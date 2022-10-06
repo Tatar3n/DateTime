@@ -9,4 +9,15 @@
     println(366)
   else
     println(365);
+  
+  var (year1,year2) := readInteger2();
+  var cntDays := 0;
+  for var i := year1 to year2 do
+  begin
+    if ((i mod 4 = 0) and (i mod 100 <> 0) or (i mod 400 = 0)) then
+      cntDays += 366
+    else
+      cntDays += 365;
+  end;
+  println(cntDays);
 end.
